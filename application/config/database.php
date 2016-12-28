@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',//getenv('IP')?
+	'hostname' => 'https://ide.c9.io/',//getenv('IP')? 'localhost'
 	'username' => 'C9_USER',
 	'password' => '',
 	'database' => 'c9',

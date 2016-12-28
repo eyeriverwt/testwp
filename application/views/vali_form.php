@@ -1,30 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+	defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
 	<title>vali_form</title>
+	<link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css">
+	
 	<style type="text/css">
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-	body {
-	    font-family: "ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","Hiragino Kaku Gothic Pro";
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px;
-		color: #4F5155;
-	}
-	code {
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
+
 	</style>
 </head>
 <body>
@@ -34,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<span style="color:red; font-size:smaller;">
 	<?php echo validation_errors(); ?>
 	</span>
-	<?php echo form_open('form'); ?>
+	<?php echo form_open('form/'); ?>
 	
 	<h5>ユーザ名</h5>
 	<span style="color:red; font-size:smaller;"><?php echo form_error('username'); ?></span>
@@ -81,6 +65,12 @@ print_r("<br><br>");
 print_r($_POST);
 
 print_r("<br><br>");
+print_r(substr(getenv('C9_USER'), 0, 16));
+print_r("<br><br>");
+print_r(getenv('IP'));
 print_r("debug ==========================================");
 print_r("<br>");
+
+print_r($gtenv);
+
 ?>

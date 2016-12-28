@@ -29,12 +29,17 @@ class Form extends CI_Controller {
 	        'xlarge'        => 'Extra Large Shirt',
 		);
 		$data['select_shirt_options'] = $select_shirt_options ;//viewに渡す配列：変数名をkeyにして$dataに格納
+		
+				$data['gtenv'] = getenv('IP');
+				//$data['ipp'] = IP ;
+				
 		//$shirts_on_sale = array('small', 'large');
 		//echo form_dropdown('test_select', $options, 'large');
 		//$this->form_validation->set_rules('options[]', 'Options', 'required');
 		$this->form_validation->set_rules('test_select', 'select', 'required');
 		$this->form_validation->set_rules('test_select', 'select', 'callback_select_check');
-		
+
+
 		
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -45,6 +50,9 @@ class Form extends CI_Controller {
 			$this->load->view('vali_form_success');
 		}
 	}
+	
+
+	
 	//ユーザー定義バリデ
 	public function username_check($str)
 	{
